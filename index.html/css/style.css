@@ -267,3 +267,99 @@ section > *:last-child {
 /* Optionally, use different hover colors for each icon */
 .social-icons a[title="LinkedIn"]:hover { color: #0077b5; }
 .social-icons a[title="Gmail"]:hover { color: #ea4335; }
+/* ...existing code... */
+
+/* Purpose: Style the project cards grid layout. 
+   Why: Makes cards responsive and visually appealing. */
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px; /* Why: Space between cards */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.12); /* Why: Slightly transparent for overlay effect */
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    padding: 18px;
+    width: 220px;
+    text-align: center;
+    cursor: pointer; /* Why: Indicates card is clickable */
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    z-index: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.04); /* Why: Pop effect on hover */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+.project-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+/* Purpose: Modal overlay for project details. 
+   Why: Covers the screen and centers the modal content. */
+.project-modal {
+    display: flex;
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.7); /* Why: Dim background for focus */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.project-modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2em;
+    min-width: 300px;
+    max-width: 90vw;
+    max-height: 90vh;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+    overflow-y: auto;
+}
+
+.project-modal-content img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 18px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: #007bff;
+}
+
+/* Responsive: Stack cards on small screens */
+@media (max-width: 700px) {
+    .project-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card {
+        width: 90vw;
+    }
+}

@@ -14,6 +14,80 @@ window.onload = function() {
 document.addEventListener('DOMContentLoaded', function() {
     let projectList = document.getElementById('project-list');
     let project = document.createElement('div');
-    project.innerHTML = "<h3>project one</h3><p></p>";
     projectList.appendChild(project);
+    projectList.appendChild(project);
+});
+
+// ...existing code...
+
+// Purpose: Data for each project card and modal.
+// Why: Centralizes project info for easy updates and dynamic modal content.
+const projectData = [
+    {
+        img: 'image/test.jpg',
+        title: 'Project One',
+        desc: 'Detailed description of Project One. Explain what you did, technologies used, and the outcome.'
+    },
+    {
+        img: 'image/test2.jpg',
+        title: 'Project Two',
+        desc: 'Detailed description of Project Two. Explain what you did, technologies used, and the outcome.'
+    },
+    {
+        img: 'image/test3.jpg',
+        title: 'Project Three',
+        desc: 'Detailed description of Project Three. Explain what you did, technologies used, and the outcome.'
+    },
+    {
+        img: 'image/test4.jpg',
+        title: 'Project Four',
+        desc: 'Detailed description of Project Four. Explain what you did, technologies used, and the outcome.'
+    },
+    {
+        img: 'image/test7.jpg',
+        title: 'Project Five',
+        desc: 'Detailed description of Project Five. Explain what you did, technologies used, and the outcome.'
+    },
+    {
+        img: 'image/test6.jpg',
+        title: 'Project Six',
+        desc: 'Detailed description of Project Six. Explain what you did, technologies used, and the outcome.'
+    }
+];
+
+// Purpose: Show modal with project details when a card is clicked.
+// Why: Provides a pop-out experience for each project.
+document.addEventListener('DOMContentLoaded', function() {
+    // ...existing code...
+
+    // Select all project cards
+    const cards = document.querySelectorAll('.project-card');
+    const modal = document.getElementById('project-modal');
+    const closeModal = document.getElementById('close-project-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+
+    // Add click event to each card
+    cards.forEach((card, idx) => {
+        card.addEventListener('click', function() {
+            // Purpose: Fill modal with the correct project data.
+            modalImg.src = projectData[idx].img;
+            modalTitle.textContent = projectData[idx].title;
+            modalDesc.textContent = projectData[idx].desc;
+            modal.style.display = 'flex';
+        });
+    });
+
+    // Purpose: Close modal when close button is clicked.
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Purpose: Close modal when clicking outside modal content.
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 });

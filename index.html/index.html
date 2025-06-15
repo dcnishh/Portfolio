@@ -41,14 +41,58 @@
         <p>I have 5 years of experience in IT Support and in process learning web development now.</p>
     </section>
 
-    <!-- Added class="section-projects" for unique background and blur -->
-    <section id="projects" class="section-projects">
-        <!-- Why: Section to showcase your projects. -->
-        <h2>My Projects</h2>
-        <div id="project-list">
-            <!-- Why: Placeholder div where project items can be added dynamically or statically. -->
+    <!-- ...existing code... -->
+<section id="projects" class="section-projects">
+    <!-- Why: Section to showcase your projects. -->
+    <h2>My Projects</h2>
+    <!-- Purpose: Container for all project cards. -->
+    <div id="project-list" class="project-list">
+        <!-- Purpose: Each .project-card represents a single project. 
+             Why: Cards provide a visually appealing, clickable interface for each project. -->
+        <div class="project-card" data-project="1">
+            <img src="image/test.jpg" alt="Project 1" />
+            <h3>Project One</h3>
+            <p>Short description of Project One.</p>
         </div>
-    </section>
+        <div class="project-card" data-project="2">
+            <img src="image/test2.jpg" alt="Project 2" />
+            <h3>Project Two</h3>
+            <p>Short description of Project Two.</p>
+        </div>
+        <div class="project-card" data-project="3">
+            <img src="image/test3.jpg" alt="Project 3" />
+            <h3>Project Three</h3>
+            <p>Short description of Project Three.</p>
+        </div>
+        <div class="project-card" data-project="4">
+            <img src="image/test4.jpg" alt="Project 4" />
+            <h3>Project Four</h3>
+            <p>Short description of Project Four.</p>
+        </div>
+        <div class="project-card" data-project="5">
+            <img src="image/test7.jpg" alt="Project 5" />
+            <h3>Project Five</h3>
+            <p>Short description of Project Five.</p>
+        </div>
+        <div class="project-card" data-project="6">
+            <img src="image/test6.Jpg" alt="Project 6" />
+            <h3>Project Six</h3>
+            <p>Short description of Project Six.</p>
+        </div>
+    </div>
+    <!-- Purpose: Modals for each project, hidden by default. 
+         Why: Clicking a card shows more details in a pop-out modal. -->
+    <div id="project-modal" class="project-modal" style="display:none;">
+        <div class="project-modal-content">
+            <span class="close-modal" id="close-project-modal">&times;</span>
+            <!-- Purpose: Content will be filled dynamically by JS. -->
+            <img id="modal-img" src="" alt="Project Image" />
+            <h3 id="modal-title"></h3>
+            <p id="modal-desc"></p>
+        </div>
+    </div>
+</section>
+<!-- ...existing code... -->
 
     <!-- Added class="section-contact" for unique background and blur -->
     <section id="contact" class="section-contact">
@@ -58,13 +102,13 @@
         <!-- Social Media Icons -->
         <div class="social-icons">
             <!-- Why: Each <a> wraps an icon and links to your social profile or email. -->
-            <a href="https://instagram.com/yourusername" target="_blank" rel="noopener" title="Instagram">
+            <a href="https://instagram.com" target="_blank" rel="noopener" title="Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" title="LinkedIn">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" title="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="mailto:youremail@example.com" title="Gmail">
+            <a href="https://gmail.com" title="Gmail">
                 <i class="fas fa-envelope"></i>
             </a>
         </div>
