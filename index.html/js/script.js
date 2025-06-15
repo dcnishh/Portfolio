@@ -26,32 +26,32 @@ const projectData = [
     {
         img: 'image/test.jpg',
         title: 'Project One',
-        desc: 'Detailed description of Project One. Explain what you did, technologies used, and the outcome.'
+        desc: ''
     },
     {
         img: 'image/test2.jpg',
         title: 'Project Two',
-        desc: 'Detailed description of Project Two. Explain what you did, technologies used, and the outcome.'
+        desc: ''
     },
     {
         img: 'image/test3.jpg',
         title: 'Project Three',
-        desc: 'Detailed description of Project Three. Explain what you did, technologies used, and the outcome.'
+        desc: ''
     },
     {
         img: 'image/test4.jpg',
         title: 'Project Four',
-        desc: 'Detailed description of Project Four. Explain what you did, technologies used, and the outcome.'
+        desc: ''
     },
     {
         img: 'image/test7.jpg',
         title: 'Project Five',
-        desc: 'Detailed description of Project Five. Explain what you did, technologies used, and the outcome.'
+        desc: ''
     },
     {
         img: 'image/test6.jpg',
         title: 'Project Six',
-        desc: 'Detailed description of Project Six. Explain what you did, technologies used, and the outcome.'
+        desc: ''
     }
 ];
 
