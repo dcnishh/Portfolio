@@ -1,0 +1,269 @@
+/* Reset and Global Styles */
+body {
+    font-family: Arial, sans-serif; /* Clean readable font */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Text color for readability */
+    position: relative; /* Why: So the background-image div can use absolute positioning inside body */
+    overflow-x: hidden; /* Why: Prevents horizontal scroll caused by absolute positioning */
+}
+
+/* Background Image Styling */
+.background-image {
+    position: absolute; /* Why: Positions the background image to fill the entire screen behind the content */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full screen width */
+    height: 100%; /* Full screen height */
+    background-image: url('../image/bg1.jpg'); /* Or use a web image URL here */
+    background-size: cover; /* Makes the image fully cover the screen */
+    background-position: center; /* Keeps image centered */
+    background-repeat: no-repeat; /* Prevents tiling or repeating */
+    filter: blur(8px); /* Why: Applies a blur effect to the background image. 8px is a good starting blur strength */
+    z-index: -1; /* Why: Sends the background image behind all other elements */
+    /* Optional: Add brightness if you want to make text more visible */
+    /* filter: blur(8px) brightness(0.7); */
+}
+
+/* Header Styling */
+header {
+    position: relative; /* Why: Needed for absolute positioning of pseudo-element background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.85); /* Why: Make header slightly transparent to show background image */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    gap: 1px;
+    overflow: hidden; /* Why: Ensures background does not spill outside header */
+}
+
+/* Add a blurred background image to the header using a pseudo-element */
+header::before {
+    content: ""; /* Why: Creates a pseudo-element for the background image */
+    position: absolute; /* Why: Allows the background to fill the header */
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0; /* Why: Places background behind header content */
+    background-image: url('../image/test2.jpg'); /* Why: Unique image for header background */
+    background-size: cover; /* Ensures image covers the header */
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px); /* Why: Applies blur so text remains readable */
+    opacity: 0.6; /* Why: Makes background semi-transparent for readability */
+}
+
+/* Ensure header content is above the background image */
+header > * {
+    position: relative;
+    z-index: 1;
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline; /* Adds hover effect to make navigation interactive */
+}
+
+/* Section Styling */
+/* Section Styling */
+section {
+    position: relative; /* Why: Needed for absolute positioning of pseudo-element background, just like header */
+    overflow: hidden;   /* Why: Ensures background does not spill outside section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.85); /* Why: Same semi-transparent dark background as header for better text visibility */
+    color: white; /* Why: White text for strong contrast on dark background */
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px;
+    gap: 10px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    border: 1px solid rgba(0,0,0,0.04);
+    text-align: center;
+}
+
+/* Add a blurred background image to each section using a pseudo-element, like header */
+.section-about::before,
+.section-projects::before,
+.section-contact::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px); /* Why: Same blur as header for consistency */
+    opacity: 0.6;      /* Why: Same opacity as header for readability */
+}
+
+/* Unique background images for each section */
+.section-about::before {
+    background-image: url('../image/test.jpg');
+}
+.section-projects::before {
+    background-image: url('../image/test3.jpg');
+}
+.section-contact::before {
+    background-image: url('../image/test6.JPG');
+}
+
+/* Ensure section content is above the background image */
+section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Make all section text white and add subtle shadow for readability */
+section h2,
+section p,
+section div,
+section a {
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+
+/* --- START: Unique background images and blur for each section --- */
+/* Why: Allows each section to have its own background image and blur effect, visible in the padding area. */
+
+/* About Section with unique background image and blur */
+#about.section-about {
+    position: relative; /* Why: Needed for absolute positioning of pseudo-element */
+    overflow: hidden;   /* Why: Ensures background does not spill outside section */
+}
+#about.section-about::before {
+    content: ""; /* Why: Creates a pseudo-element for the background image */
+    position: absolute; /* Why: Allows the background to fill the section */
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0; /* Why: Places background behind content */
+    background-image: url('../image/test.jpg'); /* Why: Unique image for About section */
+    background-size: cover; /* Why: Ensures image covers the section */
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(10px); /* Why: Controls blur for this section */
+    opacity: 0.5; /* Why: Makes background slightly transparent for readability */
+}
+#about.section-about > * {
+    position: relative; /* Why: Ensures content appears above the background */
+    z-index: 0; /* Why: Keeps content above the pseudo-element */
+}
+
+/* Projects Section with unique background image and blur */
+#projects.section-projects {
+    position: relative;
+    overflow: hidden;
+}
+#projects.section-projects::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    background-image: url('../image/test3.jpg'); /* Why: Unique image for Projects section */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px); /* Why: Different blur for Projects */
+    opacity: 0.7; /* Why: Slightly less opacity for Projects */
+}
+#projects.section-projects > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Contact Section with unique background image and blur */
+#contact.section-contact {
+    position: relative;
+    overflow: hidden;
+}
+#contact.section-contact::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    background-image: url('../image/test6.JPG'); /* Why: Unique image for Contact section */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px); /* Why: Stronger blur for Contact */
+    opacity: 0.6;
+}
+#contact.section-contact > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Usage:
+   - In your HTML, add class="section-about" to the About section,
+   - class="section-projects" to the Projects section,
+   - class="section-contact" to the Contact section.
+   This will apply different background images and blur to each section's padding area.
+*/
+/* --- END: Unique background images and blur for each section --- */
+
+footer {
+    background-color: rgba(51, 51, 51, 0.8); /* Why: Semi-transparent dark footer for contrast */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+    header, section {
+        padding: 20px;
+    }
+
+}
+
+    /* --- Reduce vertical gap between headings and paragraphs --- */
+/* Why: By default, h1, h2, and p have large top/bottom margins, causing big gaps.
+   This reduces those margins so header and section content appears more compact and visually connected. */
+header h1,
+header p,
+header nav,
+section h2,
+section p {
+    margin-top: 20px;    /* Why: Small top margin for slight separation */
+    margin-bottom: 20px; /* Why: Small bottom margin for slight separation */
+}
+
+/* Optionally, remove margin from the last element in header and section for even tighter layout */
+/* Why: Prevents extra space at the bottom of header/section content */
+header > *:last-child,
+section > *:last-child {
+    margin-bottom: 10px; /* Why: Ensures no extra space at the bottom */
+}
+
+/* ...existing code... */
+
+/* Social Icons Styling */
+.social-icons {
+    margin-top: 10px; /* Why: Adds space above icons */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Why: Space between each icon */
+}
+
+.social-icons a {
+    color: #fff; /* Why: White icons for contrast */
+    font-size: 2rem; /* Why: Larger, easily clickable icons */
+    transition: color 0.2s;
+}
+
+.social-icons a:hover {
+    color: #e1306c; /* Why: Highlight color on hover (Instagram pink as example) */
+}
+
+/* Optionally, use different hover colors for each icon */
+.social-icons a[title="LinkedIn"]:hover { color: #0077b5; }
+.social-icons a[title="Gmail"]:hover { color: #ea4335; }

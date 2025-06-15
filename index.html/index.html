@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Why: Sets character encoding to UTF-8 for proper text rendering. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Why: Ensures responsive design on all devices by setting viewport. -->
+    <title>My Portfolio</title>
+    <!-- Why: Sets the title shown in the browser tab. -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Why: Links external CSS file for styling the page. -->
+     <!-- Font Awesome CDN for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Why: Loads Font Awesome so you can use icon classes like 'fa-instagram', 'fa-linkedin', etc. -->
+</head>
+
+<body>
+
+    <!-- Background Layer -->
+    <div class="background-image"></div>
+    <!-- Why: Separate div to control the background image independently. This makes it easier to apply blur or effects without affecting text. -->
+
+    <header>
+        <!-- Why: Contains the main heading, subtitle, and navigation for the site. -->
+        <h1>Amir Danish</h1>
+        <!-- Why: Displays your name prominently at the top. -->
+        <p>IT Support | Portfolio </p>
+        <!-- Why: Brief description or tagline about you. -->
+        <nav>
+            <!-- Why: Navigation links for smooth scrolling to sections. -->
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Added class="section-about" for unique background and blur -->
+    <section id="about" class="section-about">
+        <!-- Why: Section to introduce yourself and your background. -->
+        <h2>About Me</h2>
+        <p>I have 5 years of experience in IT Support and I'm learning web development now.</p>
+    </section>
+
+    <!-- Added class="section-projects" for unique background and blur -->
+    <section id="projects" class="section-projects">
+        <!-- Why: Section to showcase your projects. -->
+        <h2>My Projects</h2>
+        <div id="project-list">
+            <!-- Why: Placeholder div where project items can be added dynamically or statically. -->
+        </div>
+    </section>
+
+    <!-- Added class="section-contact" for unique background and blur -->
+    <section id="contact" class="section-contact">
+        <!-- Why: Section for contact information so visitors can reach you. -->
+        <h2>Contact Me</h2>
+        <p>Feel free to follow</p>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <!-- Why: Each <a> wraps an icon and links to your social profile or email. -->
+            <a href="https://instagram.com/yourusername" target="_blank" rel="noopener" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:youremail@example.com" title="Gmail">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <!-- Why: .social-icons groups the icons for styling and layout. -->
+    </section>
+
+    <footer>
+        <!-- Why: Footer for copyright or additional info. -->
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+
+    
+
+    <script src="js/script.js"></script>
+    <!-- Why: Links external JavaScript file for interactive features or dynamic content. -->
+
+    <!-- Custom JavaScript for Welcome Message -->
+
+    <!-- Custom Modal for Welcome Message -->
+    <!-- Purpose: This modal replaces the default alert() to display a welcome message without triggering the browser's address bar or using a blocking prompt. -->
+    <div id="custom-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0, 0, 0, 0.5); justify-content:center; align-items:center; z-index:1000;">
+      <div style="background:#fff; padding:2em; border-radius:8px; text-align:center; min-width:250px;">
+        <p>Good day!</p>
+        <!-- Purpose: Custom styled close button for the modal. 
+             The button is styled inline for demonstration, but you can move these styles to your CSS file for better maintainability.
+             The button text is changed to "Let's Start!" for a more engaging user experience. -->
+        <button 
+          onclick="document.getElementById('custom-modal').style.display='none'" 
+          style="
+            background-color: #007bff; /* Purpose: Sets a blue background for visibility and modern look */
+            color: #fff;               /* Purpose: White text for contrast */
+            padding: 0.75em 2em;       /* Purpose: Larger padding for a bigger, more clickable button */
+            border: none;              /* Purpose: Removes default border for a cleaner look */
+            border-radius: 6px;        /* Purpose: Rounded corners for a modern feel */
+            font-size: 1.1em;          /* Purpose: Slightly larger text for readability */
+            cursor: pointer;           /* Purpose: Shows pointer cursor on hover for better UX */
+            transition: background 0.2s; /* Purpose: Smooth transition on hover */
+          "
+          onmouseover="this.style.backgroundColor='#0056b3'" 
+          onmouseout="this.style.backgroundColor='#007bff'"   <!-- Purpose: Restore original color when not hovered -->
+          
+        Welcome</button>
+
+      </div>
+    </div>
+    
+</body>
+
+</body>
+</html>
