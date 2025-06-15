@@ -47,16 +47,12 @@ const projectData = [
         img: 'image/test7.jpg',
         title: 'Project Five',
         desc: ''
-    },
-    {
-        img: 'image/test8.jpg',
-        title: 'Project Six',
-        desc: ''
     }
+    // Removed 6th project object (Project Six) - CHANGE: Only 5 projects now
 ];
 
-// Purpose: Show modal with project details when a card is clicked.
-// Why: Provides a pop-out experience for each project.
+// ...existing code...
+
 document.addEventListener('DOMContentLoaded', function() {
     // ...existing code...
 
@@ -70,13 +66,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add click event to each card
     cards.forEach((card, idx) => {
-        card.addEventListener('click', function() {
-            // Purpose: Fill modal with the correct project data.
-            modalImg.src = projectData[idx].img;
-            modalTitle.textContent = projectData[idx].title;
-            modalDesc.textContent = projectData[idx].desc;
-            modal.style.display = 'flex';
-        });
+        // CHANGE: Only first 5 cards will have data, as only 5 in projectData
+        if (idx < projectData.length) {
+            card.addEventListener('click', function() {
+                // Purpose: Fill modal with the correct project data.
+                modalImg.src = projectData[idx].img;
+                modalTitle.textContent = projectData[idx].title;
+                modalDesc.textContent = projectData[idx].desc;
+                modal.style.display = 'flex';
+            });
+        }
     });
 
     // Purpose: Close modal when close button is clicked.
