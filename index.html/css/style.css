@@ -328,7 +328,14 @@ section > *:last-child {
     position: relative;
     box-shadow: 0 8px 32px rgba(0,0,0,0.22);
     overflow-y: auto;
+    
+    color: #000000; /* Example: blue title */
 }
+
+#modal-desc {
+    color: #444; /* Example: dark gray description */
+}
+
 
 .project-modal-content img {
     width: 100%;
