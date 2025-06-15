@@ -112,7 +112,7 @@ section {
     background-image: url('../image/test3.jpg');
 }
 .section-contact::before {
-    background-image: url('../image/test6.jpg');
+    background-image: url('../image/test8.jpg');
 }
 
 /* Ensure section content is above the background image */
@@ -188,7 +188,7 @@ section a {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: 0;
-    background-image: url('../image/test6.jpg'); /* Why: Unique image for Contact section */
+    background-image: url('../image/test8.jpg'); /* Why: Unique image for Contact section */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

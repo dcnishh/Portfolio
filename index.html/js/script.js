@@ -49,7 +49,7 @@ const projectData = [
         desc: ''
     },
     {
-        img: 'image/test6.jpg',
+        img: 'image/test8.jpg',
         title: 'Project Six',
         desc: ''
     }
