@@ -1,5 +1,7 @@
 // This script shows an alert when the page loads
-// ...existing code...
+// git add .
+// git commit -m "Add custom modal instead of alert"
+// git push 
 
 // Purpose: Show the custom modal instead of using alert() to avoid highlighting the address bar and to provide a better user experience.
 window.onload = function() {
