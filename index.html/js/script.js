@@ -12,6 +12,6 @@ window.onload = function() {
 document.addEventListener('DOMContentLoaded', function() {
     let projectList = document.getElementById('project-list');
     let project = document.createElement('div');
-    project.innerHTML = "<h3>Example Project</h3><p>This is my first interactive project!</p>";
+    project.innerHTML = "<h3>project one</h3><p></p>";
     projectList.appendChild(project);
 });
