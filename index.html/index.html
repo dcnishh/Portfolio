@@ -9,7 +9,7 @@
     <!-- Why: Sets the title shown in the browser tab. -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Why: Links external CSS file for styling the page. -->
-     <!-- Font Awesome CDN for social icons -->
+    <!-- Font Awesome CDN for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Why: Loads Font Awesome so you can use icon classes like 'fa-instagram', 'fa-linkedin', etc. -->
 </head>
@@ -41,58 +41,56 @@
         <p>I have 5 years of experience in IT Support and in process learning web development now.</p>
     </section>
 
-    <!-- ...existing code... -->
-<section id="projects" class="section-projects">
-    <!-- Why: Section to showcase your projects. -->
-    <h2>My Projects</h2>
-    <!-- Purpose: Container for all project cards. -->
-    <div id="project-list" class="project-list">
-        <!-- Purpose: Each .project-card represents a single project. 
-             Why: Cards provide a visually appealing, clickable interface for each project. -->
-        <div class="project-card" data-project="1">
-            <img src="image/test.jpg" alt="Project 1" />
-            <h3>Project One</h3>
-            <p></p> <!--idea: Insert Date and day instead of descriptions-->
+    <section id="projects" class="section-projects">
+        <!-- Why: Section to showcase your projects. -->
+        <h2>My Projects</h2>
+        <!-- Purpose: Container for all project cards. -->
+        <div id="project-list" class="project-list">
+            <!-- Purpose: Each .project-card represents a single project. 
+                 Why: Cards provide a visually appealing, clickable interface for each project. -->
+            <div class="project-card" data-project="1">
+                <img src="image/test.jpg" alt="Screenshot of Project One" />
+                <h3>Project One</h3>
+                <p></p>
+            </div>
+            <div class="project-card" data-project="2">
+                <img src="image/test2.jpg" alt="Screenshot of Project Two" />
+                <h3>Project Two</h3>
+                <p></p>
+            </div>
+            <div class="project-card" data-project="3">
+                <img src="image/test3.jpg" alt="Screenshot of Project Three" />
+                <h3>Project Three</h3>
+                <p></p>
+            </div>
+            <div class="project-card" data-project="4">
+                <img src="image/test4.jpg" alt="Screenshot of Project Four" />
+                <h3>Project Four</h3>
+                <p></p>
+            </div>
+            <div class="project-card" data-project="5">
+                <img src="image/test7.jpg" alt="Screenshot of Project Five" />
+                <h3>Project Five</h3>
+                <p></p>
+            </div>
+            <div class="project-card" data-project="6">
+                <img src="image/test6.jpg" alt="Screenshot of Project Six" />
+                <h3>Project Six</h3>
+                <p></p>
+            </div>
         </div>
-        <div class="project-card" data-project="2">
-            <img src="image/test2.jpg" alt="Project 2" />
-            <h3>Project Two</h3>
-            <p></p>
+        <!-- Purpose: Modals for each project, hidden by default. 
+             Why: Clicking a card shows more details in a pop-out modal. -->
+        <div id="project-modal" class="project-modal" style="display:none;">
+            <div class="project-modal-content">
+                <span class="close-modal" id="close-project-modal">&times;</span>
+                <!-- Purpose: Content will be filled dynamically by JS. -->
+                <img id="modal-img" src="" alt="Project Image" />
+                <h3 id="modal-title"></h3>
+                <p id="modal-desc"></p>
+            </div>
         </div>
-        <div class="project-card" data-project="3">
-            <img src="image/test3.jpg" alt="Project 3" />
-            <h3>Project Three</h3>
-            <p></p>
-        </div>
-        <div class="project-card" data-project="4">
-            <img src="image/test4.jpg" alt="Project 4" />
-            <h3>Project Four</h3>
-            <p></p>
-        </div>
-        <div class="project-card" data-project="5">
-            <img src="image/test7.jpg" alt="Project 5" />
-            <h3>Project Five</h3>
-            <p></p>
-        </div>
-        <div class="project-card" data-project="6">
-            <img src="image/test6.Jpg" alt="Project 6" />
-            <h3>Project Six</h3>
-            <p></p>
-        </div>
-    </div>
-    <!-- Purpose: Modals for each project, hidden by default. 
-         Why: Clicking a card shows more details in a pop-out modal. -->
-    <div id="project-modal" class="project-modal" style="display:none;">
-        <div class="project-modal-content">
-            <span class="close-modal" id="close-project-modal">&times;</span>
-            <!-- Purpose: Content will be filled dynamically by JS. -->
-            <img id="modal-img" src="" alt="Project Image" />
-            <h3 id="modal-title"></h3>
-            <p id="modal-desc"></p>
-        </div>
-    </div>
-</section>
-<!-- ...existing code... -->
+    </section>
 
     <!-- Added class="section-contact" for unique background and blur -->
     <section id="contact" class="section-contact">
@@ -108,7 +106,7 @@
             <a href="https://linkedin.com" target="_blank" rel="noopener" title="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://gmail.com" title="Gmail">
+            <a href="mailto:your.email@gmail.com" title="Gmail">
                 <i class="fas fa-envelope"></i>
             </a>
         </div>
@@ -120,42 +118,30 @@
         <p>&copy; 2025 My Portfolio</p>
     </footer>
 
-    
-
     <script src="js/script.js"></script>
     <!-- Why: Links external JavaScript file for interactive features or dynamic content. -->
 
-    <!-- Custom JavaScript for Welcome Message -->
-
     <!-- Custom Modal for Welcome Message -->
-    <!-- Purpose: This modal replaces the default alert() to display a welcome message without triggering the browser's address bar or using a blocking prompt. -->
     <div id="custom-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0, 0, 0, 0.5); justify-content:center; align-items:center; z-index:1000;">
       <div style="background:#fff; padding:2em; border-radius:8px; text-align:center; min-width:250px;">
         <p>Good day!</p>
-        <!-- Purpose: Custom styled close button for the modal. 
-             The button is styled inline for demonstration, but you can move these styles to your CSS file for better maintainability.
-             The button text is changed to "Let's Start!" for a more engaging user experience. -->
         <button 
           onclick="document.getElementById('custom-modal').style.display='none'" 
           style="
-            background-color: #007bff; /* Purpose: Sets a blue background for visibility and modern look */
-            color: #fff;               /* Purpose: White text for contrast */
-            padding: 0.75em 2em;       /* Purpose: Larger padding for a bigger, more clickable button */
-            border: none;              /* Purpose: Removes default border for a cleaner look */
-            border-radius: 6px;        /* Purpose: Rounded corners for a modern feel */
-            font-size: 1.1em;          /* Purpose: Slightly larger text for readability */
-            cursor: pointer;           /* Purpose: Shows pointer cursor on hover for better UX */
-            transition: background 0.2s; /* Purpose: Smooth transition on hover */
-          "
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.75em 2em;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.2s;"
           onmouseover="this.style.backgroundColor='#0056b3'" 
-          onmouseout="this.style.backgroundColor='#007bff'"   <!-- Purpose: Restore original color when not hovered -->
-          
-        Welcome</button>
-
+          onmouseout="this.style.backgroundColor='#007bff'">
+          Welcome
+        </button>
       </div>
     </div>
-    
-</body>
 
 </body>
 </html>
